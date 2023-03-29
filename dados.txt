@@ -1,0 +1,20 @@
+codigolivro1
+POO: os objetos contra atacam
+2023
+codigolivro2
+OO: os caçadores do objeto perdido
+2022
+-1
+111
+Jorje Lukas
+codigolivro1
+222
+Estiven Espylberg
+codigolivro2
+-1
+111
+codigolivro2
+-1
+111
+codigolivro2
+2023
