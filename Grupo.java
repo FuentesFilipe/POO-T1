@@ -6,7 +6,7 @@ public class Grupo {
 
 	public boolean cadastraAutor(Autor autor) {
 		int auxPesquisa = autor.getCodigo();
-		if (pesquisaAutor(auxPesquisa) != null) {
+		if (pesquisaAutor(auxPesquisa) == null) {
 			autores.add(autor);
 			return true;
 		}
@@ -16,10 +16,10 @@ public class Grupo {
 	public Autor pesquisaAutor(int codigo) {
 		for (Autor autor : autores) {
 			if (autor.getCodigo() == codigo) {
-				return autor;
+				return autor; // achou o autor, retorna o obj
 			}
 		}
-		return null;
+		return null; // nao existe o autor
 	}
 
 }

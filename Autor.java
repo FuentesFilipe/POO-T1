@@ -23,11 +23,25 @@ public class Autor {
 	}
 
 	public boolean adicionaLivro(Livro livro) {
+		String auxPesquisa = livro.getIsbn();
+		if (buscaLivro(auxPesquisa) == null) {
+			livros.add(livro);
+		}
 		return false;
 	}
 
-	public ArrayList<Livro> pesquisaLivros() {
+	public Livro buscaLivro (String isbn) {
+		for (Livro livro : livros) {
+			if (livro.getIsbn().equals(isbn))
+				return livro;
+		}
+		return null;
+	}
 
+	public ArrayList<Livro> pesquisaLivros() {
+		if (!livros.isEmpty()) {
+			return livros;
+		}
 		return null;
 	}
 
