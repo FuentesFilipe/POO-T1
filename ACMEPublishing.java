@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.PrintStream;
 import java.nio.charset.Charset;
-import java.sql.SQLOutput;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -42,9 +41,7 @@ public class ACMEPublishing {
 			int ano = Integer.parseInt(campos[1]);
 
 			// testes no arquivo de saido TODO: IMPLEMENT TASK
-//			System.out.println("ISBN LIVRO: " + isbn);
-//			System.out.println("NOME LIVRO: " + nome);
-//			System.out.println("ANO DE LANCAMENTO: " + ano);
+
 			System.out.printf("1;%s;%s;%d\n", isbn, nome, ano);
 		}
 
