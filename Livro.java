@@ -27,8 +27,20 @@ public class Livro {
 	}
 
 	public boolean adicionaAutor(Autor autor) {
-		autores.add(autor);
+		int auxPesquisa = autor.getCodigo();
+		if (pesquisaAutor(auxPesquisa) == null) {
+			autores.add(autor);
+			return true;
+		}
 		return false;
 	}
 
+	public Autor pesquisaAutor(int codigo) {
+		for (Autor autor : autores) {
+			if (autor.getCodigo() == codigo) {
+				return autor; // achou o autor, retorna o obj
+			}
+		}
+		return null; // nao existe o autor
+	}
 }
