@@ -78,13 +78,15 @@ public class ACMEPublishing {
 		System.out.printf("4;%d\n", qtdAutoresPasso4);
 
 		// PASSO 5: ADICIONAR LIVRO A UM AUTOR
-		while (entrada.hasNextLine()) { // TODO: UPDATE ME WITH ABOVE LOGIC
-			String id = entrada.nextLine(); // Id lido do autor
-			if (id.equals("-1"))
+		while (entrada.hasNextLine()) {
+			int id = Integer.parseInt(entrada.nextLine()); // Id lido do autor
+			if (id == -1)
 				break;
 			String isbn = entrada.nextLine();
 
 			// testing TODO: IMPLEMENT TASK
+			Autor auxAutor = grupo.pesquisaAutor(id);
+			Livro auxLivro = biblioteca.pesquisaLivro(isbn);
 			System.out.println("ID AUTOR PRA ADD LIVRO: " + id);
 			System.out.println("ISBN DO LIVRO: " + isbn);
 		}
