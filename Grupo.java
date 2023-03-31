@@ -4,6 +4,10 @@ public class Grupo {
 
 	private ArrayList<Autor> autores = new ArrayList<>(10);
 
+	public ArrayList<Autor> getAutores() {
+		return autores;
+	}
+
 	public boolean cadastraAutor(Autor autor) {
 		int auxPesquisa = autor.getCodigo();
 		if (pesquisaAutor(auxPesquisa) == null) {
