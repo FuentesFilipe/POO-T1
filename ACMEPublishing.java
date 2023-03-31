@@ -73,6 +73,9 @@ public class ACMEPublishing {
 				System.out.printf("3;%d;%s;%s\n", id, nome, isbn);
 			}
 		}
+		// PASSO 4: MOSTRAR QTD DE AUTORES CADASTRADOS
+		int qtdAutoresPasso4 = grupo.getAutores().size();
+		System.out.printf("4;%d\n", qtdAutoresPasso4);
 
 		// PASSO 5: ADICIONAR LIVRO A UM AUTOR
 		while (entrada.hasNextLine()) { // TODO: UPDATE ME WITH ABOVE LOGIC
