@@ -1,5 +1,6 @@
 1;codigolivro1;POO: os objetos contra atacam;2023
 1;codigolivro2;OO: os caçadores do objeto perdido;2022
+2;2
 3;111;Jorje Lukas;codigolivro1
 3;222;Estiven Espylberg;codigolivro2
 ID AUTOR PRA ADD LIVRO: 111

@@ -28,6 +28,7 @@ public class ACMEPublishing {
 	}
 
 	public void executa() {
+		Biblioteca biblioteca = new Biblioteca();
 		// PASSO 1: CADASTRAR LIVROS
 		while (entrada.hasNextLine()) {
 			String isbn = entrada.nextLine(); // isbn lido do livro
@@ -40,10 +41,15 @@ public class ACMEPublishing {
 			String nome = campos[0];
 			int ano = Integer.parseInt(campos[1]);
 
-			// testes no arquivo de saido TODO: IMPLEMENT TASK
-
+			// testes no arquivo de saido
+			Livro livro = new Livro(isbn, nome, ano);
+			biblioteca.cadastraLivro(livro);
 			System.out.printf("1;%s;%s;%d\n", isbn, nome, ano);
 		}
+
+		// PASSO 2: MOSTRA QTD DE LIVROS CADASTRADOS
+		int qtdLivrosPasso2 = biblioteca.getLivros().size();
+		System.out.printf("2;%d\n", qtdLivrosPasso2);
 
 		// PASSO 3: CADASTRAR AUTORES
 		while (entrada.hasNextLine()) {
