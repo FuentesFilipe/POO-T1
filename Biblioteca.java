@@ -4,6 +4,10 @@ public class Biblioteca {
 
 	private ArrayList<Livro> livros = new ArrayList<>(10);
 
+	public ArrayList<Livro> getLivros() {
+		return livros;
+	}
+
 	public boolean cadastraLivro(Livro livro) {
 		String auxPesquisa = livro.getIsbn();
 		if (pesquisaLivro(auxPesquisa) == null) {
