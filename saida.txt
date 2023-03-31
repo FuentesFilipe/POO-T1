@@ -1,14 +1,9 @@
-ISBN LIVRO: codigolivro1
-NOME LIVRO: POO: os objetos contra atacam
-ANO DE LANCAMENTO: 2023
-ISBN LIVRO: codigolivro2
-NOME LIVRO: OO: os caçadores do objeto perdido
-ANO DE LANCAMENTO: 2022
-ID AUTOR: 111
-NOME AUTOR: Jorje Lukas
-ISBN LIVRO: codigolivro1
-ID AUTOR: 222
-NOME AUTOR: Estiven Espylberg
-ISBN LIVRO: codigolivro2
-ID AUTOR: 111
-ISBN LIVRO: codigolivro2
+1;codigolivro1;POO: os objetos contra atacam;2023
+1;codigolivro2;OO: os caçadores do objeto perdido;2022
+3;111;Jorje Lukas;codigolivro1
+3;222;Estiven Espylberg;codigolivro2
+ID AUTOR PRA ADD LIVRO: 111
+ISBN DO LIVRO: codigolivro2
+PASSO 6: 111
+PASSO 7: codigolivro2
+PASSO 10: 2023
