@@ -28,7 +28,8 @@ public class ACMEPublishing {
 	}
 
 	public void executa() {
-		Biblioteca biblioteca = new Biblioteca();
+		Biblioteca biblioteca = new Biblioteca(); // para todos livros cadastrados
+
 		// PASSO 1: CADASTRAR LIVROS
 		while (entrada.hasNextLine()) {
 			String isbn = entrada.nextLine(); // isbn lido do livro
@@ -51,6 +52,7 @@ public class ACMEPublishing {
 		int qtdLivrosPasso2 = biblioteca.getLivros().size();
 		System.out.printf("2;%d\n", qtdLivrosPasso2);
 
+		Grupo grupo = new Grupo(); // para todos autores cadastrados
 		// PASSO 3: CADASTRAR AUTORES
 		while (entrada.hasNextLine()) {
 			int id = Integer.parseInt(entrada.nextLine()); // Id lido do Autor
@@ -63,11 +65,13 @@ public class ACMEPublishing {
 			String nome = campos[0];
 			String isbn = campos[1];
 
-			// Do something with the book information TODO: IMPLEMENT TASK
-//			System.out.println("ID AUTOR: " + id);
-//			System.out.println("NOME AUTOR: " + nome);
-//			System.out.println("ISBN LIVRO: " + isbn);
-			System.out.printf("3;%d;%s;%s\n", id, nome, isbn);
+			// Do something with the book information
+			Livro auxLivro = biblioteca.pesquisaLivro(isbn); // pode ser null
+			if (grupo.pesquisaAutor(id) == null && auxLivro != null) {
+				Autor autor = new Autor(id, nome, auxLivro);
+				grupo.cadastraAutor(autor);
+				System.out.printf("3;%d;%s;%s\n", id, nome, isbn);
+			}
 		}
 
 		// PASSO 5: ADICIONAR LIVRO A UM AUTOR
