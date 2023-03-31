@@ -31,9 +31,11 @@ public class Autor {
 	}
 
 	public Livro buscaLivro (String isbn) {
-		for (Livro livro : livros) {
-			if (livro.getIsbn().equals(isbn))
-				return livro;
+		if (!livros.isEmpty()) {
+			for (Livro livro : livros) {
+				if (livro.getIsbn().equals(isbn))
+					return livro;
+			}
 		}
 		return null;
 	}
