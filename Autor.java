@@ -14,6 +14,14 @@ public class Autor {
 		adicionaLivro(livro);
 	}
 
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
 	public boolean adicionaLivro(Livro livro) {
 		return false;
 	}
