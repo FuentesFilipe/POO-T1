@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Biblioteca {
 
-	private ArrayList<Livro> livros;
+	private ArrayList<Livro> livros = new ArrayList<>(10);
 
 	public boolean cadastraLivro(Livro livro) {
 		String auxPesquisa = livro.getIsbn();
