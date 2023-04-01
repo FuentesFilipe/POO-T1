@@ -26,6 +26,7 @@ public class Autor {
 		String auxPesquisa = livro.getIsbn();
 		if (buscaLivro(auxPesquisa) == null) {
 			livros.add(livro);
+			return true;
 		}
 		return false;
 	}

@@ -87,8 +87,14 @@ public class ACMEPublishing {
 			// testing TODO: IMPLEMENT TASK
 			Autor auxAutor = grupo.pesquisaAutor(id);
 			Livro auxLivro = biblioteca.pesquisaLivro(isbn);
-			System.out.println("ID AUTOR PRA ADD LIVRO: " + id);
-			System.out.println("ISBN DO LIVRO: " + isbn);
+
+			// buscar infos que faltam do autor
+			String nome = auxAutor.getNome();
+			// buscar infos que faltam do livro
+			String titulo = auxLivro.getTitulo();
+			int ano = auxLivro.getAno();
+
+			System.out.printf("5;%d;%s;%s;%s;%d\n", id, nome, isbn, titulo, ano);
 		}
 		String aux6 = entrada.nextLine();
 		String aux7 = entrada.nextLine();
