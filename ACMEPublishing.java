@@ -42,7 +42,6 @@ public class ACMEPublishing {
 			String nome = campos[0];
 			int ano = Integer.parseInt(campos[1]);
 
-			// testes no arquivo de saido
 			Livro livro = new Livro(isbn, nome, ano);
 			biblioteca.cadastraLivro(livro);
 			System.out.printf("1;%s;%s;%d\n", isbn, nome, ano);
@@ -65,7 +64,6 @@ public class ACMEPublishing {
 			String nome = campos[0];
 			String isbn = campos[1];
 
-			// Do something with the book information
 			Livro auxLivro = biblioteca.pesquisaLivro(isbn); // pode ser null
 			if (grupo.pesquisaAutor(id) == null && auxLivro != null) {
 				Autor autor = new Autor(id, nome, auxLivro);
@@ -89,6 +87,8 @@ public class ACMEPublishing {
 
 			// adicionar livro ao autor
 			auxAutor.adicionaLivro(auxLivro);
+			// adicionar autor ao livro
+			auxLivro.adicionaAutor(auxAutor);
 
 			// buscar infos que faltam do autor
 			String nome = auxAutor.getNome();
