@@ -101,9 +101,12 @@ public class ACMEPublishing {
 		// PASSO 6: MOSTRAR LIVROS DE UM AUTOR
 		int codAutorPasso6 = Integer.parseInt(entrada.nextLine());
 		Autor autorPasso6 = grupo.pesquisaAutor(codAutorPasso6);
+		String nome = autorPasso6.getNome();
 		for (Livro livro : autorPasso6.pesquisaLivros()) {
-			System.out.printf(
-					"6;%d;%s;%s;%s;%d\n", codAutorPasso6, autorPasso6.getNome(), livro.getIsbn(), livro.getTitulo(), livro.getAno());
+			int ano = livro.getAno();
+			String titulo = livro.getTitulo();
+			String isbn = livro.getIsbn();
+			System.out.printf("6;%d;%s;%s;%s;%d\n", codAutorPasso6, nome, isbn, titulo, ano);
 		}
 
 		String aux7 = entrada.nextLine();
