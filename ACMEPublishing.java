@@ -65,9 +65,10 @@ public class ACMEPublishing {
 			String isbn = campos[1];
 
 			Livro auxLivro = biblioteca.pesquisaLivro(isbn); // pode ser null
-			if (grupo.pesquisaAutor(id) == null && auxLivro != null) {
+			if (grupo.pesquisaAutor(id) == null) {
 				Autor autor = new Autor(id, nome, auxLivro);
 				grupo.cadastraAutor(autor);
+				auxLivro.adicionaAutor(autor);
 				System.out.printf("3;%d;%s;%s\n", id, nome, isbn);
 			}
 		}
@@ -112,15 +113,26 @@ public class ACMEPublishing {
 		// PASSO 7: MOSTRAR AUTORES DE UM LIVRO
 		String isbnPasso7 = entrada.nextLine();
 		Livro livroPasso7 = biblioteca.pesquisaLivro(isbnPasso7);
-		StringBuilder autorNames = new StringBuilder();
+		StringBuilder nomeAutores = new StringBuilder();
 		for (Autor autor : livroPasso7.getAutores()) {
-			if (autorNames.length() > 0) {
-				autorNames.append(";");
+			if (nomeAutores.length() > 0) {
+				nomeAutores.append(";");
 			}
-			autorNames.append(autor.getNome());
+			nomeAutores.append(autor.getNome());
 		}
 
-		System.out.printf("7;%s;%s\n", isbnPasso7, autorNames.toString());
+		System.out.printf("7;%s;%s\n", isbnPasso7, nomeAutores.toString());
+
+		// PASSO 8: MOSTRAR TITULO DE LIVROS QUE POSSUEM MAIS DE 1 AUTOR
+		for (Livro livro : biblioteca.getLivros()) {
+			if (livro.getAutores().size() > 1) {
+				String isbn = livro.getIsbn();
+				String titulo = livro.getTitulo();
+				System.out.printf("8;%s;%s\n", isbn, titulo);
+			}
+		}
+
+
 
 		String aux10 = entrada.nextLine();
 		System.out.println("PASSO 10: " + aux10);
