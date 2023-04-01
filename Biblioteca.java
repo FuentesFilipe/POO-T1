@@ -2,7 +2,11 @@ import java.util.ArrayList;
 
 public class Biblioteca {
 
-	private ArrayList<Livro> livros;
+	private ArrayList<Livro> livros = new ArrayList<>(10);
+
+	public ArrayList<Livro> getLivros() {
+		return livros;
+	}
 
 	public boolean cadastraLivro(Livro livro) {
 		String auxPesquisa = livro.getIsbn();
@@ -14,9 +18,11 @@ public class Biblioteca {
 	}
 
 	public Livro pesquisaLivro(String isbn) {
-		for (Livro livro : livros) {
-			if (livro.getIsbn().equals(isbn))
-				return livro;
+		if(!livros.isEmpty()) {
+			for (Livro livro : livros) {
+				if (livro.getIsbn().equals(isbn))
+					return livro;
+			}
 		}
 		return null;
 	}
@@ -25,8 +31,9 @@ public class Biblioteca {
 		ArrayList<Livro> aux = new ArrayList<>();
 
 		for (Livro livro : livros) {
-			if (livro.getAno() == ano)
+			if (livro.getAno() == ano) {
 				aux.add(livro);
+			}
 		}
 
 		if (!aux.isEmpty())

@@ -10,6 +10,13 @@ public class Livro {
 
 	private ArrayList<Autor> autores;
 
+	public Livro(String isbn, String titulo, int ano) {
+		this.isbn = isbn;
+		this.titulo = titulo;
+		this.ano = ano;
+		autores = new ArrayList<>(5);
+	}
+
 	public String getIsbn() {
 		return isbn;
 	}

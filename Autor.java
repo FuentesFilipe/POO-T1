@@ -6,7 +6,7 @@ public class Autor {
 
 	private String nome;
 
-	private ArrayList<Livro> livros;
+	private ArrayList<Livro> livros = new ArrayList<>(10);
 
 	public Autor(int codigo, String nome, Livro livro) {
 		this.codigo = codigo;
@@ -31,9 +31,11 @@ public class Autor {
 	}
 
 	public Livro buscaLivro (String isbn) {
-		for (Livro livro : livros) {
-			if (livro.getIsbn().equals(isbn))
-				return livro;
+		if (!livros.isEmpty()) {
+			for (Livro livro : livros) {
+				if (livro.getIsbn().equals(isbn))
+					return livro;
+			}
 		}
 		return null;
 	}
