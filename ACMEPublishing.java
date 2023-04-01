@@ -109,10 +109,20 @@ public class ACMEPublishing {
 			System.out.printf("6;%d;%s;%s;%s;%d\n", codAutorPasso6, nome, isbn, titulo, ano);
 		}
 
-		String aux7 = entrada.nextLine();
-		String aux10 = entrada.nextLine();
+		// PASSO 7: MOSTRAR AUTORES DE UM LIVRO
+		String isbnPasso7 = entrada.nextLine();
+		Livro livroPasso7 = biblioteca.pesquisaLivro(isbnPasso7);
+		StringBuilder autorNames = new StringBuilder();
+		for (Autor autor : livroPasso7.getAutores()) {
+			if (autorNames.length() > 0) {
+				autorNames.append(";");
+			}
+			autorNames.append(autor.getNome());
+		}
 
-		System.out.println("PASSO 7: " + aux7);
+		System.out.printf("7;%s;%s\n", isbnPasso7, autorNames.toString());
+
+		String aux10 = entrada.nextLine();
 		System.out.println("PASSO 10: " + aux10);
 	}
 
