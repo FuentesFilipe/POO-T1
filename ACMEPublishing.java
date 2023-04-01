@@ -84,9 +84,11 @@ public class ACMEPublishing {
 				break;
 			String isbn = entrada.nextLine();
 
-			// testing TODO: IMPLEMENT TASK
 			Autor auxAutor = grupo.pesquisaAutor(id);
 			Livro auxLivro = biblioteca.pesquisaLivro(isbn);
+
+			// adicionar livro ao autor
+			auxAutor.adicionaLivro(auxLivro);
 
 			// buscar infos que faltam do autor
 			String nome = auxAutor.getNome();
@@ -96,11 +98,17 @@ public class ACMEPublishing {
 
 			System.out.printf("5;%d;%s;%s;%s;%d\n", id, nome, isbn, titulo, ano);
 		}
-		String aux6 = entrada.nextLine();
+		// PASSO 6: MOSTRAR LIVROS DE UM AUTOR
+		int codAutorPasso6 = Integer.parseInt(entrada.nextLine());
+		Autor autorPasso6 = grupo.pesquisaAutor(codAutorPasso6);
+		for (Livro livro : autorPasso6.pesquisaLivros()) {
+			System.out.printf(
+					"6;%d;%s;%s;%s;%d\n", codAutorPasso6, autorPasso6.getNome(), livro.getIsbn(), livro.getTitulo(), livro.getAno());
+		}
+
 		String aux7 = entrada.nextLine();
 		String aux10 = entrada.nextLine();
 
-		System.out.println("PASSO 6: " + aux6);
 		System.out.println("PASSO 7: " + aux7);
 		System.out.println("PASSO 10: " + aux10);
 	}

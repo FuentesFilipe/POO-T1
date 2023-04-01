@@ -5,6 +5,7 @@
 3;222;Estiven Espylberg;codigolivro2
 4;2
 5;111;Jorje Lukas;codigolivro2;OO: os caçadores do objeto perdido;2022
-PASSO 6: 111
+6;111;Jorje Lukas;codigolivro1;POO: os objetos contra atacam;2023
+6;111;Jorje Lukas;codigolivro2;OO: os caçadores do objeto perdido;2022
 PASSO 7: codigolivro2
 PASSO 10: 2023
