@@ -10,4 +10,4 @@
 7;codigolivro2;Estiven Espylberg;Jorje Lukas
 8;codigolivro2;OO: os caçadores do objeto perdido
 9;Jorje Lukas;codigolivro1;codigolivro2
-PASSO 10: 2023
+10;codigolivro1;POO: os objetos contra atacam;2023

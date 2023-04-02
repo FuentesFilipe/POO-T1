@@ -150,9 +150,13 @@ public class ACMEPublishing {
 			}
 		}
 
-
-		String aux10 = entrada.nextLine();
-		System.out.println("PASSO 10: " + aux10);
+		// PASSO 10: MOSTRAR LIVROS DE UM DETERMINADO ANO
+		int anoLivroPasso10 = Integer.parseInt(entrada.nextLine());
+		for (Livro livro : biblioteca.pesquisaLivro(anoLivroPasso10)) {
+			String isbn = livro.getIsbn();
+			String titulo = livro.getTitulo();
+			System.out.printf("10;%s;%s;%d", isbn, titulo, anoLivroPasso10);
+		}
 	}
 
 }
