@@ -18,10 +18,10 @@ public class ACMEPublishing {
 	// Construtor
 	public ACMEPublishing() {
 		try {
-			BufferedReader streamEntrada = new BufferedReader(new FileReader("dados.txt"));
+			BufferedReader streamEntrada = new BufferedReader(new FileReader("dados2.txt"));
 			entrada = new Scanner(streamEntrada); // Usa como entrada um arquivo
 			PrintStream streamSaida =
-					new PrintStream(new File("saida.txt"), Charset.forName("UTF-8"));
+					new PrintStream(new File("saida2.txt"), Charset.forName("UTF-8"));
 			System.setOut(streamSaida); // Usa como saida um arquivo
 		} catch (Exception e) {
 			System.out.println(e);
@@ -152,7 +152,7 @@ public class ACMEPublishing {
 		for (Livro livro : biblioteca.pesquisaLivro(anoLivroPasso10)) {
 			String isbn = livro.getIsbn();
 			String titulo = livro.getTitulo();
-			System.out.printf("10;%s;%s;%d", isbn, titulo, anoLivroPasso10);
+			System.out.printf("10;%s;%s;%d\n", isbn, titulo, anoLivroPasso10);
 		}
 	}
 
