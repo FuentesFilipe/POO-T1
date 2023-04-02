@@ -88,18 +88,15 @@ public class ACMEPublishing {
 			Autor auxAutor = grupo.pesquisaAutor(id);
 			Livro auxLivro = biblioteca.pesquisaLivro(isbn);
 
-			// adicionar livro ao autor
-			auxAutor.adicionaLivro(auxLivro);
-			// adicionar autor ao livro
-			auxLivro.adicionaAutor(auxAutor);
-
-			// buscar infos que faltam do autor
-			String nome = auxAutor.getNome();
-			// buscar infos que faltam do livro
-			String titulo = auxLivro.getTitulo();
-			int ano = auxLivro.getAno();
-
-			System.out.printf("5;%d;%s;%s;%s;%d\n", id, nome, isbn, titulo, ano);
+			// adicionar livro ao autor e autor ao livro
+			if(auxAutor.adicionaLivro(auxLivro) && auxLivro.adicionaAutor(auxAutor)) {
+				// buscar infos que faltam do autor
+				String nome = auxAutor.getNome();
+				// buscar infos que faltam do livro
+				String titulo = auxLivro.getTitulo();
+				int ano = auxLivro.getAno();
+				System.out.printf("5;%d;%s;%s;%s;%d\n", id, nome, isbn, titulo, ano);
+			}
 		}
 		// PASSO 6: MOSTRAR LIVROS DE UM AUTOR
 		int codAutorPasso6 = Integer.parseInt(entrada.nextLine());
