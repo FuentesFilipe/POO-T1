@@ -39,14 +39,14 @@ public class ACMEPublishing {
 				break;
 
 			// proximas 2 linhas depois do Id vao ser Nome e Ano respectivamente
-			String infoLivro = entrada.nextLine() + "," + entrada.nextLine();
-			String[] campos = infoLivro.split(",");
+			String infoLivro = entrada.nextLine() + "  " + entrada.nextLine();
+			String[] campos = infoLivro.split("  ");
 			String nome = campos[0];
 			int ano = Integer.parseInt(campos[1]);
 
 			Livro livro = new Livro(isbn, nome, ano);
-			biblioteca.cadastraLivro(livro);
-			System.out.printf("1;%s;%s;%d\n", isbn, nome, ano);
+			if(biblioteca.cadastraLivro(livro))
+				System.out.printf("1;%s;%s;%d\n", isbn, nome, ano);
 		}
 
 		// PASSO 2: MOSTRA QTD DE LIVROS CADASTRADOS
