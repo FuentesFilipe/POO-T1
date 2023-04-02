@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.PrintStream;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -13,6 +14,7 @@ public class ACMEPublishing {
 	private Grupo grupo;
 
 	private Scanner entrada = null; // Atributo para entrada de dados
+
 	// Construtor
 	public ACMEPublishing() {
 		try {
@@ -133,7 +135,20 @@ public class ACMEPublishing {
 		}
 
 		// PASSO 9: MOSTRAR NOMES DE AUTORES COM MAIS DE UM LIVRO
-		//TODO: IMPLEMENT ME
+		StringBuilder isbnLivros = new StringBuilder();
+		for (Autor autor : grupo.getAutores()) {
+			ArrayList<Livro> aux = autor.pesquisaLivros();
+			if (aux.size() > 1) {
+				for (Livro livro : aux) {
+					if (isbnLivros.length() > 0) {
+						isbnLivros.append(";");
+					}
+					isbnLivros.append(livro.getIsbn());
+				}
+				String auxNome = autor.getNome();
+				System.out.printf("9;%s;%s\n", auxNome, isbnLivros.toString());
+			}
+		}
 
 
 		String aux10 = entrada.nextLine();
